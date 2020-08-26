@@ -4,15 +4,21 @@ import './App.css';
 import Header from './components/header/Header';
 import TinderCards from './components/tindercards/TinderCards';
 import SwipeButtons from './components/swipebuttons/SwipeButtons';
+import Chats from './components/chats/Chats';
+import ChatScreen from './components/chatscreen/ChatScreen';
 
 function App() {
   return (
     <div className='app'>
       <Router>
         <Switch>
+          <Route path='/chat/:person'>
+            <Header backButton='/chat' />
+            <ChatScreen />
+          </Route>
           <Route path='/chat'>
             <Header backButton='/' />
-            <h1>I am the chat page</h1>
+            <Chats />
           </Route>
           <Route path='/'>
             <Header />
